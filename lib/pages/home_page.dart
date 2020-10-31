@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:squares/pages/profile_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -11,12 +12,17 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: Icon(
-              Icons.person_sharp,
-              size: 20,
-              color: Colors.deepPurple[200],
+          leading: InkWell(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => ProfilePage()));
+            },
+            child: Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: Icon(
+                Icons.person_sharp,
+                size: 20,
+                color: Colors.deepPurple[200],
+              ),
             ),
           ),
           elevation: 0,
